@@ -118,6 +118,20 @@
           </div>
           <button type="button" data-action="advance"></button>
         </aside>
+        <form class="scanbar" data-scan autocomplete="off">
+          <label
+            ><span>Scan a unit label</span
+            ><input
+              name="code"
+              data-scaninput
+              placeholder="Scan or type a unit ID, e.g. AD-12"
+              autocomplete="off"
+              spellcheck="false"
+              autofocus
+          /></label>
+          <button type="submit">Look up</button>
+        </form>
+        <div class="scanresult" data-scanresult aria-live="polite"></div>
         <div class="shell">
           <nav aria-label="Store records" data-nav></nav>
           <section

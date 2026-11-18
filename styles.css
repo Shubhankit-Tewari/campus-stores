@@ -369,3 +369,94 @@ body > main {
     min-height: 44px;
   }
 }
+
+#campus-stores .aidraft {
+  border-left-color: var(--mark);
+  background: var(--memo);
+  color: var(--memotxt);
+}
+#campus-stores .aidraft ul {
+  padding-left: 18px;
+}
+#campus-stores .aidraft li {
+  margin: 8px 0;
+}
+#campus-stores .aidraft .sources {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+#campus-stores .aidraft label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+#campus-stores .aidraft textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 3px;
+}
+
+#campus-stores .scanbar {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  padding: 10px 19px;
+  border-bottom: 1px solid var(--line);
+}
+#campus-stores .scanbar label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+}
+#campus-stores .scanbar span {
+  display: block;
+  margin-bottom: 3px;
+}
+#campus-stores .scanbar input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.04em;
+}
+#campus-stores .scanresult:empty {
+  display: none;
+}
+#campus-stores .scanresult {
+  padding: 0 19px 12px;
+  border-bottom: 1px solid var(--line);
+}
+#campus-stores .scancard {
+  margin-top: 10px;
+  padding: 11px 13px;
+  background: var(--desk);
+  border-left: 3px solid var(--sel);
+}
+#campus-stores .scancard h3 {
+  margin: 2px 0 4px;
+}
+#campus-stores .scancard p {
+  margin: 4px 0;
+}
+#campus-stores .scancard.warn {
+  border-left-color: var(--mark);
+  background: var(--memo);
+  color: var(--memotxt);
+}
+#campus-stores .scancard.ok {
+  border-left-color: var(--oktxt);
+  background: var(--ok);
+  color: var(--oktxt);
+}
+#campus-stores .scanissue {
+  margin-top: 8px;
+}
+
+#campus-stores .scancard .buttons {
+  display: inline-flex;
+  margin: 8px 8px 0 0;
+}
+#campus-stores article.record p {
+  white-space: pre-line;
+}
