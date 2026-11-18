@@ -1,8 +1,10 @@
 # Campus Stores
 
-## My submission: AI handover draft
+## My submission: AI handover draft + label scanning
 
-**Where to look:** Desk book → **Draft handover with AI** (Friday 7:30 pm onward), then Loan register on Saturday morning. The code is in `app.js` (`draftHandover`, `handoverFor`, and the `data-handover` form) and the `.aidraft` styles in `styles.css`.
+**Try it live:** https://shubhankit-tewari.github.io/campus-stores/ (click **Restart sample shift** to start fresh).
+
+**Where to look:** Desk book → **Draft handover with AI** (Friday 7:30 pm onward), then Loan register on Saturday morning. Try the scan bar by typing `AD-12`, `AD-15` or `PR-06`. The code is in `app.js` (`draftHandover`, `handoverFor`, and the `data-handover` form, plus `scanView` and `issue`), the scan bar in `index.html`, and the `.aidraft` and `.scan*` styles in `styles.css`.
 
 ### What the product handles well: the partial return
 
@@ -30,6 +32,15 @@ At the end of a shift, **Draft handover with AI** reads the open slips, the desk
 - It also flags approved items that were never issued, for example if the adapter had been forgotten at pickup.
 
 **The same job with the change:** On Friday at 7:30 pm I record the two returns, click Draft handover, read the draft against what Kabir told me, and save it. On Saturday at 9 am, Leela arrives. I open the Loan register, see that L-404 is expected from her, check that the label reads AD-12, and record the return. I don't need to open the desk book.
+
+**Scanning a label closes the loop.** A scan bar sits above every screen. It works with a USB or Bluetooth scanner, which types the label and presses Enter, or you can type a unit ID like `AD-12` yourself. The app decides what the scan means:
+
+- **Unit on loan:** shows its slip, plus who has it according to the handover note, with one **Record return** button.
+- **Unit on the shelf and an approved request needs it:** offers to issue it on a new slip, with the collector taken from the desk book (Kabir) and the request's return time. Scanning PR-04, SP-02 and AD-12 in turn issues the whole Film Society kit.
+- **Wrong unit:** scanning AD-15 on Saturday says it's on the shelf and that the open adapter slip is for AD-12.
+- **In repair or unknown:** blocked, with the reason shown.
+
+Every scan needs a confirming click, and a repeat of the same code within 1.5 seconds is ignored. The "Check label" step from the handover becomes a physical check rather than something staff have to remember.
 
 **Note on the "AI":** this prototype uses a scripted stand-in. Simple rules pull holders, times and same-type units out of the slips and messages, with a short delay to mimic a model call. In production the same interface would call a language model. The AI only drafts. The hard rules (approved equipment type, approved quantity, repair status) stay deterministic, and a person confirms every change to the register.
 
